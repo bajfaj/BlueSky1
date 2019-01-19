@@ -1,11 +1,65 @@
 ﻿Feature: Login
-	In order to avoid silly mistakes
-	As a math idiot
-	I want to be told the sum of two numbers
+	As a registered user of Giftree
+	i would like to login
+	so that i can use the site
+	
 
 @mytag
-Scenario: Add two numbers
-	Given I have entered 50 into the calculator
-	And I have entered 70 into the calculator
-	When I press add
-	Then the result should be 120 on the screen
+Scenario: Valid Login - Valid username and valid password
+	Given i navigate to the site
+	When i click on login link
+	And I enter a valid username
+	And i enter a valid password
+	And I click on login button
+	Then user should login succesfully
+
+Scenario:  Invalid Login - valid username and invalid password
+    Given i navigate to the site
+	And I enter a valid username and invalid password
+	When I click ok
+	Then user should be unable to login
+
+Scenario:  Invalid Login - invalid username and valid password
+    Given i navigate to the site
+	And I enter an invalid username and valid password
+	When I click ok
+	Then user should be unable to login
+
+Scenario:  Invalid Login - invalid username and invalid password
+    Given i navigate to the site
+	And I enter invalid username and invalid password
+	When I click ok
+	Then user should be unable to login
+
+Scenario:  Invalid Login - empty username and empty password
+    Given i navigate to the site
+	And I enter no username and no password
+	When I click ok
+	Then user should be unable to login
+
+Scenario:  Invalid Login - empty username and valid password
+    Given i navigate to the site
+	And I enter no username and valid password
+	When I click ok
+	Then user should be unable to login
+
+Scenario:  Invalid Login - empty username and invalid password
+    Given i navigate to the site
+	And I enter no username and invalid password
+	When I click ok
+	Then user should be unable to login
+
+Scenario:  Invalid Login - valid username and empty password
+    Given i navigate to the site
+	And I enter a valid username and no password
+	When I click ok
+	Then user should be unable to login
+
+Scenario:  Invalid Login - invalid username and empty password
+    Given i navigate to the site
+	And I enter a invalid username and no password
+	When I click ok
+	Then user should be unable to login
+
+
+
