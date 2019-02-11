@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium.Chrome;
+﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,19 +9,21 @@ using TechTalk.SpecFlow;
 namespace BlueSky1.Utilities
 {
     [Binding]
-    public sealed class Hooks
+    public class Hooks
     {
-        
+
+        public static IWebDriver Driver;
+
         [BeforeScenario]
         public void BeforeScenario()
         {
-            ChromeDriver driver = new chromedriver();
+            Driver = new chromedriver();
         }
 
         [AfterScenario]
         public void AfterScenario()
         {
-            
+            Driver.Quit();
         }
     }
 }

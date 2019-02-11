@@ -23,6 +23,7 @@ namespace BlueSky1.StepDefinations
         public void ThenTheRegistrationPageIsDisplayed()
         {
             ScenarioContext.Current.Pending();
+        }
 
         [Given(@"I input user login details on the site")]
         public void GivenIInputUserLoginDetailsOnTheSite()

@@ -82,6 +82,7 @@
     </Compile>
     <Compile Include="PageObjects\LoginPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StepDefinations\LoginSteps.cs" />
     <Compile Include="StepDefinations\RegistrationSteps.cs" />
     <Compile Include="Utilities\chromedriver.cs" />
     <Compile Include="Utilities\Hooks.cs" />
